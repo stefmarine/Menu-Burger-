@@ -1,0 +1,74 @@
+body {
+  margin : 0;
+  overflow-x: hidden;  /* permet d'enlever la barre de scroll */
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.burger {
+  position : absolute;
+  /* absolute = l'élément sort du flux de la page */
+  height: 50px;
+  width: 50px;
+  top: 10px;
+  left: 10px;
+  background-image: url(burger.png);
+  background-size: 50px;
+  z-index: 1;
+  /* Le z-index = la profondeur de l'objet on peut le faire passer
+  sur les autres = carré sur le le vollet du burger menu bleu */
+}
+
+  nav {
+    background-color: #40E0D0;
+    width: 30vw;
+    height: 100vh;
+    transform : translateX(-30vw); /* Permet d'enlever le menu */
+    transition: transform 700ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: calibri;
+    font-size: 50px;
+    font-style: bold;
+
+  }
+
+nav.visible {
+    transform: translateX(0);
+    transition: transform 700ms;
+}
+
+.accueil {
+  transform: translateX(-10vw);
+  transition: transform 1500ms;
+}
+
+.produits {
+    transform: translateX(-10vw);
+    transition: transform 1800ms;
+  }
+
+.contact {
+  transform: translateX(-10vw);
+  transition: transform 2000ms;
+}
+
+
+nav.visible .accueil {
+  transform: translateX(0vw);
+}
+
+nav.visible .produits {
+    transform: translateX(0vw);
+    transition-delay: 300ms;
+  }
+
+nav.visible .contact {
+  transform: translateX(0vw);
+  transition-delay: 500ms;
+}
